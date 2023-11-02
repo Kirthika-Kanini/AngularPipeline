@@ -1,0 +1,61 @@
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+
+<div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-6">
+        <h1>Add Course</h1>
+        <form [formGroup]="studentForm" (ngSubmit)="addStudent()" class="needs-validation custom-form">
+        
+<div class="mb-3">
+    <label for="courseName" class="form-label">Course Name</label>
+    <input type="text" formControlName="courseName" id="courseName" class="form-control" placeholder="Enter name" required>
+    <div class="text-danger" *ngIf="studentForm.get('courseName')?.errors?.['required']">Please enter the course name.</div>
+  </div>
+
+  <div class="mb-3">
+    <label for="imageFile" class="form-label">Course Image</label>
+    <input type="file" (change)="onFileSelected($event)" formControlName="imageFile" accept="image/*" id="imageFile" required>
+    <div class="text-danger" *ngIf="studentForm.get('imageFile')?.errors?.['required']">Please select an image file.</div>
+  </div>
+
+  <div class="mb-3">
+    <label for="courseDescription" class="form-label">Course Description</label>
+    <textarea formControlName="courseDescription" id="courseDescription" class="form-control" placeholder="Enter description" required></textarea>
+    <div class="text-danger" *ngIf="studentForm.get('courseDescription')?.errors?.['required']">Please enter the course description.</div>
+  </div>
+
+  <div class="mb-3">
+    <label for="courseType" class="form-label">Course Type</label>
+    <input type="text" formControlName="courseType" id="courseType" class="form-control" placeholder="Enter type" required>
+    <div class="text-danger" *ngIf="studentForm.get('courseType')?.errors?.['required']">Please enter the course type.</div>
+  </div>
+
+  <div class="mb-3">
+    <label for="courseDuration" class="form-label">Course Duration</label>
+    <input type="text" formControlName="courseDuration" id="courseDuration" class="form-control" placeholder="Enter duration" required>
+    <div class="text-danger" *ngIf="studentForm.get('courseDuration')?.errors?.['required']">Please enter the course duration.</div>
+  </div>
+
+  <div class="mb-3">
+    <label for="courseOverview" class="form-label">Course Overview</label>
+    <input type="text" formControlName="courseOverview" id="courseOverview" class="form-control" placeholder="Enter" required>
+    <div class="text-danger" *ngIf="studentForm.get('courseDuration')?.errors?.['required']">Please enter the course duration.</div>
+  </div>
+  
+  
+          <button type="submit" class="btn btn-primary">Add Course</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <div class="popup" *ngIf="successMessage">
+    <div class="popup-content">
+      <span class="close" (click)="closePopup()">&times;</span>
+      <p>Successfully submitted!</p>
+    </div>
+  </div>
+  
+

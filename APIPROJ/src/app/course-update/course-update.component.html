@@ -1,0 +1,52 @@
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+<div class="container mt-4">
+  <div class="form-group">
+    <input type="text" [(ngModel)]="courseId" placeholder="Enter ID" class="form-control">
+  </div>
+  <div class="form-group">
+  <button class="btn btn-primary" (click)="getAllById()">Search</button>
+</div>
+  <form (ngSubmit)="updateCourse()">
+    <ul *ngIf="Course">
+      <div class="form-group">
+        <label for="coursename">Course Name</label>
+        <input type="text" [(ngModel)]="course.courseName" name="courseName" id="courseName" class="form-control" placeholder="Enter name" required>
+      </div>
+
+      <div class="form-group">
+        <label for="coursedescription">Course Description</label>
+        <input type="text" [(ngModel)]="course.courseDescription" name="courseDescription" id="courseDescription" class="form-control" placeholder="Enter description" required>
+      </div>
+
+      <div class="form-group">
+        <label for="coursetype">Course Type</label>
+        <input type="text" [(ngModel)]="course.courseType" name="courseType" id="courseType" class="form-control" placeholder="Enter type" required>
+      </div>
+
+      <div class="form-group">
+        <label for="courseduration">Course Duration</label>
+        <input type="text" [(ngModel)]="course.courseDuration" name="courseDuration" id="courseDuration" class="form-control" placeholder="Enter duration" required>
+      </div>
+
+      <div class="form-group">
+        <label for="courseOverview">Course Overview</label>
+        <input type="text" [(ngModel)]="course.courseOverview" name="courseOverview" id="courseOverview" class="form-control" placeholder="Enter" required>
+      </div>
+
+      <div class="form-group">
+        <label for="courseimage">Course Image Path</label>
+        <input type="text" [(ngModel)]="course.couImagePath" name="couImagePath" id="couImagePath" class="form-control" placeholder="Enter image path">
+      </div>
+
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </ul>
+  </form>
+</div>
+<div class="popup" *ngIf="successMessage">
+  <div class="popup-content">
+    <span class="close" (click)="closePopup()">&times;</span>
+    <p>Successfully updated!</p>
+  </div>
+</div>

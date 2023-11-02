@@ -1,0 +1,339 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin-left: 0;
+  }
+  
+  :root {
+    --purple: hsl(240, 80%, 89%);
+    --pink: hsl(0, 59%, 94%);
+    --light-bg: hsl(204, 37%, 92%);
+    --light-gray-bg: hsl(0, 0%, 94%);
+    --white: hsl(0, 0%, 100%);
+    --dark: hsl(0, 0%, 7%);
+    --text-gray: hsl(0, 0%, 30%);
+  }
+  
+  body {
+    background-color: var(--light-bg); /* Set the desired background color */
+    font-family: "Space Grotesk", sans-serif;
+    color: var(--dark);
+  }
+  
+  h3 {
+    font-size: 1.5em;
+    font-weight: 700;
+  }
+  
+  p {
+    font-size: 1em;
+    line-height: 1.7;
+    font-weight: 300;
+    color: var(--text-gray);
+  }
+  
+  .description {
+    white-space: wrap;
+  }
+  
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+  
+  .wrap {
+    display: flex;
+    /* justify: space-between; */
+    align-items: stretch;
+    width: 100%;
+    gap: 24px;
+    padding: 24px;
+    flex-wrap: wrap;
+    background-color: var(--white); /* Set the desired background color */
+  }
+  
+  .box {
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+  .box-top {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    justify-content: space-between;
+    /* gap: 12px; */
+    /* margin-bottom: 10px; */
+    
+  }
+
+  
+  .box-image {
+    width: 100%;
+    height: 360px;
+    object-fit: cover;
+    object-position: 50% 20%;
+  }
+  
+  .title-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .box-title {
+  font-size: 1.2em;
+  border-left: 3px solid var(--purple);
+  padding-left: 12px;
+}
+  
+  .user-follow-info {
+    color: hsl(0, 0%, 60%);
+  }
+  
+  .button {
+    display: block;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-top: auto;
+    padding: 16px;
+    color: #000;
+    background: transparent;
+    box-shadow: 0px 0px 0px 1px black inset;
+    transition: background 0.4s ease;
+  }
+  
+  .button:hover {
+    background: var(--purple);
+  }
+  
+  .fill-one {
+    background: var(--light-bg);
+  }
+
+  .box:hover {
+    transform: translateY(-5px);
+  }
+  
+  .box-image {
+    border-radius: 10px 10px 0 0;
+  }
+  
+  .fill-two {
+    background: var(--pink);
+  }
+  
+  /* RESPONSIVE QUERIES */
+  
+  @media (min-width: 320px) {
+    .title-flex {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: start;
+    }
+    .user-follow-info {
+      margin-top: 6px;
+    }
+  }
+  
+  @media (min-width: 460px) {
+    .title-flex {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: start;
+    }
+    .user-follow-info {
+      margin-top: 6px;
+    }
+  }
+  
+  @media (min-width: 640px) {
+    .box {
+      flex-basis: calc(50% - 12px);
+    }
+    .title-flex {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: start;
+    }
+    .user-follow-info {
+      margin-top: 6px;
+    }
+  }
+  
+  @media (min-width: 840px) {
+    .title-flex {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: start;
+    }
+    .user-follow-info {
+      margin-top: 6px;
+    }
+  }
+  
+  @media (min-width: 1024px) {
+    .box {
+      flex-basis: calc(33.3% - 16px);
+    }
+    .title-flex {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: start;
+    }
+    .user-follow-info {
+      margin-top: 6px;
+    }
+  }
+  
+  @media (min-width: 1100px) {
+    .box {
+      flex-basis: calc(25% - 18px);
+    }
+  }
+  
+
+  .header {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  /* margin-left: 25px; */
+  /* height: 300px; Adjust the height as needed */
+  overflow: hidden;
+}
+
+.header-container {
+  position: relative;
+}
+
+.card {
+  position: absolute;
+  top: 50%;
+  left: 20px; /* Adjust the left distance as needed */
+  transform: translateY(-50%);
+  background-color: rgba(255, 255, 255, 0.8); /* Set the desired background color and opacity */
+  padding: 10px 20px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Add a subtle box shadow */
+  z-index: 1; /* Ensure the card appears above the image */
+}
+
+.cardcontainer{
+    padding-left: 110px;
+    padding-right: 110px;
+    margin-top: 30px;
+    /* padding-top: 50px; */
+    background-color: rgb(247, 247, 247);
+}
+
+.card-title {
+  margin: 0;
+}
+
+.header-image {
+  width: 100%;
+  height: auto; /* Change height to auto to maintain aspect ratio */
+  display: block; /* Remove any default inline spacing */
+  transition: filter 0.3s ease;
+}
+
+.header-image:hover {
+  filter: brightness(100%);
+}
+  
+.card p,
+.box-title,
+.user-follow-info,
+.description {
+  margin-bottom: 4px; /* Adjust the margin bottom value as desired */
+}
+
+.hover-card {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    max-width: 300px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 2;
+    padding: 20px;
+  }
+  
+  .box:hover .hover-card {
+    opacity: 1;
+  }
+  
+  .box {
+    position: relative;
+    z-index: 1;
+    transition: transform 0.3s ease;
+  }
+  
+  .box:hover {
+    transform: scale(1.05) translateY(-5px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+    z-index: 3;
+  }
+  
+  .hover-card-content {
+    text-align: center;
+  }
+  
+  .hover-card-title {
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #555; /* Set the desired color */
+  }
+  
+  .hover-card-description {
+    font-size: 0.9em;
+    color: #888; /* Set the desired color */
+  }
+  
+  .button {
+    /* ...existing styles... */
+    position: relative;
+    
+    z-index: 1;
+  }
+
+
+
+  .usertext{
+    padding-left: 15px;
+    padding-right: 15px;
+    text-align: justify;
+  }
+
+  .usertextduration{
+    padding-left: 15px;
+    padding-right: 15px;
+    text-align: justify;
+  }
+  .minitextdesc{
+    text-align: justify;
+  }
+
+  
+
+  
+  
+  
+  
+  
+  
+  

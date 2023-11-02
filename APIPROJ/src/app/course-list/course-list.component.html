@@ -1,0 +1,82 @@
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container">
+    <a class="navbar-brand" href="/courses">Course Portal</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav"
+      aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/courses" routerLinkActive="active">Courses</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/faculties" routerLinkActive="active">Faculties</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/students" routerLinkActive="active">Students</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/logout" routerLinkActive="active">Logout</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/enrolledadmcourses" routerLinkActive="active">Enrollments</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<br>
+<h1 style="text-align: center;">Course Details</h1>
+
+<div class="container mt-4">
+  <div class="top-right">
+    <a class="btn btn-butttooon" href="/newcourse">Add New Course</a>
+  </div>
+</div>
+
+<div class="container mt-4">
+  <div class="row">
+    <div class="col-md-4" *ngFor="let stu of Courses">
+      <div class="card mb-3" (click)="openModal(stu)">
+        <img [src]="'https://localhost:7098/uploads/' + stu.couImagePath" class="card-img-top" alt="Student Image" width="200" height="">
+        <div class="card-body">
+          <h5 class="card-title">{{ stu.courseName }}</h5>
+          <p><strong>Course Description:</strong>{{ stu.courseDescription | slice:0:120 }}{{ stu.courseDescription.length > 60 ? '...' : '' }}</p>
+          <p>Click here for more details</p>
+          <div class="d-flex justify-content-between align-items-center">
+          <button class="btn btn-primary" [routerLink]="['/editcourse',stu.courseId]">Edit</button>
+            <button type="button" class="btn btn-danger" [routerLink]="['/deletecourse',stu.courseId]">Delete</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="modal" *ngIf="selectedCourse">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">{{ selectedCourse.courseName }}</h5>
+        <button type="button" class="close" (click)="closeModal()">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p><strong>Description:</strong> {{ selectedCourse.courseDescription }}</p>
+        <p><strong>Type:</strong> {{ selectedCourse.courseType }}</p>
+        <p><strong>Duration:</strong> {{ selectedCourse.courseDuration }}</p>
+      
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" (click)="closeModal()">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="backdrop" *ngIf="selectedCourse"></div>

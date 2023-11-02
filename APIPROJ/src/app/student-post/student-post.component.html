@@ -1,0 +1,40 @@
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+<app-navbar-user></app-navbar-user>
+<br><br>
+<div class="container">
+  <h2>Add Student</h2>
+  <form (ngSubmit)="submitForm(studentForm)" #studentForm="ngForm">
+<div class="mb-3">
+  <label for="studentName" class="form-label">Student Name</label>
+  <input type="text" id="studentName" name="studentName" [(ngModel)]="newStudent.studentName" class="form-control" required>
+</div>
+<div class="mb-3">
+  <label for="studentGender" class="form-label">Student Gender</label>
+  <input type="text" id="studentGender" name="studentGender" [(ngModel)]="newStudent.studentGender" class="form-control" required>
+</div>
+<div class="mb-3">
+  <label for="studentDept" class="form-label">Student Department</label>
+  <input type="text" id="studentDept" name="studentDept" [(ngModel)]="newStudent.studentDept" class="form-control" required>
+</div>
+<div class="mb-3">
+  <label for="studentMail" class="form-label">Student Email</label>
+  <input type="email" id="studentMail" name="studentMail" [(ngModel)]="newStudent.studentMail" class="form-control" required>
+</div>
+<div class="mb-3">
+  <label for="studentPhone" class="form-label">Student Phone</label>
+  <input type="text" id="studentPhone" name="studentPhone" [(ngModel)]="newStudent.studentPhone" class="form-control" required>
+</div>
+<div class="mb-3">
+  <label for="studentCourseId" class="form-label">Course ID</label>
+  <input type="text" id="studentCourseId" name="studentCourseId" [(ngModel)]="newStudent.course.courseId" class="form-control" required>
+</div>
+<div class="form-actions">
+    <button type="submit" class="btn btn-primary">Add Student</button>
+  </div>
+</form></div>
+<div class="popup" *ngIf="successMessage">
+  <div class="popup-content">
+    <span class="close" (click)="closePopup()">&times;</span>
+    <p>Successfully submitted!</p>
+  </div>
+</div>

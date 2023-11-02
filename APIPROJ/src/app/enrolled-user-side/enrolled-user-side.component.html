@@ -1,0 +1,15 @@
+<app-navbar-user></app-navbar-user>
+
+<br><br>
+<div class="cardcontainer">
+  <div class="card" *ngFor="let course of enrolledCourses">
+    <div class="card-content">
+      <p class="course-name">{{ course.courseId }}</p>
+      <p class="course-name">{{ course.userName }}</p>
+      <p class="course-name">{{ course.courseName }}</p>
+      <p class="status">{{ course.status }}</p>
+      <p class="status">{{ course.courseDuration }}</p>
+      <button *ngIf="course.status === 'accepted'" (click)="confirmEnrollment(course.courseId)" style="background-color: #4CAF50; color: white; padding: 10px 20px; border: none; cursor: pointer;">Confirm Enrollment</button>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,14 @@
+<!-- college-post.component.html -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+
+<div class="container mt-4">
+  <p>college-post works!</p>
+  
+  <div class="form-group">
+    <label for="facultyId">Faculty ID</label>
+    <input type="number" [(ngModel)]="facultyId" name="facultyId" id="facultyId" class="form-control" placeholder="Enter student ID">
+  </div>
+  
+  <button (click)="deleteCourse(facultyId)" class="btn btn-danger">Delete Student</button>
+  
+</div>

@@ -1,0 +1,13 @@
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+<div class="container mt-4">
+  
+  <div class="form-group">
+    <label for="courseId">Course ID</label>
+    <input type="number" [(ngModel)]="courseId" name="courseId" id="courseId" class="form-control" placeholder="Enter student ID">
+  </div>
+  
+  <button (click)="deleteCourse(courseId)" class="btn btn-danger">Delete Student</button>
+  
+</div>

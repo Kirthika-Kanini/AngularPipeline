@@ -1,0 +1,61 @@
+.cardcontainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    margin-top: -30px;
+  }
+  
+  .card {
+    background-color: #f8f9fa;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin: 10px;
+    padding: 20px;
+    flex: 0 0 calc(25% - 20px);
+    max-width: 250px;
+    transition: transform 0.3s ease;
+  }
+  
+  .card:hover {
+    transform: scale(1.05);
+  }
+  
+  .card-content {
+    text-align: center;
+  }
+  
+  .box-title {
+    color: #5f27cd;
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+  
+  .usertextduration {
+    margin: 0;
+  }
+  
+  .button-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+  }
+  
+  .accept-button,
+  .reject-button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+  }
+  
+  .accept-button {
+    background-color: #28a745;
+    color: #fff;
+  }
+  
+  .reject-button {
+    background-color: #dc3545;
+    color: #fff;
+  }
+  

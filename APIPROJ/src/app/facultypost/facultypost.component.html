@@ -1,0 +1,43 @@
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+<app-navbar-user></app-navbar-user>
+
+<br><br>
+<div class="container">
+  <h2>Add Faculty</h2>
+  <form (ngSubmit)="submitForm(facultyForm)" #facultyForm="ngForm">
+    <div class="mb-3">
+      <label for="facultyName" class="form-label">Faculty Name</label>
+      <input type="text" id="facultyName" name="facultyName" [(ngModel)]="newFaculty.facultyName" class="form-control" required>
+    </div>
+    <div class="mb-3">
+      <label for="facultyDesignation" class="form-label">Faculty Designation</label>
+      <input type="text" id="facultyDesignation" name="facultyDesignation" [(ngModel)]="newFaculty.facultyDesignation" class="form-control" required>
+    </div>
+    <div class="mb-3">
+      <label for="facultyDept" class="form-label">Faculty Department</label>
+      <input type="text" id="facultyDept" name="facultyDept" [(ngModel)]="newFaculty.facultyDept" class="form-control" required>
+    </div>
+    <div class="mb-3">
+      <label for="facultymail" class="form-label">Faculty Email</label>
+      <input type="email" id="facultymail" name="facultymail" [(ngModel)]="newFaculty.facultymail" class="form-control" required>
+    </div>
+    <div class="mb-3">
+      <label for="facultySalary" class="form-label">Faculty Salary</label>
+      <input type="text" id="facultySalary" name="facultySalary" [(ngModel)]="newFaculty.facultySalary" class="form-control" required>
+    </div>
+    <div class="mb-3">
+      <label for="courseId" class="form-label">Course ID</label>
+      <input type="text" id="courseId" name="courseId" [(ngModel)]="newFaculty.course.courseId" class="form-control" required>
+    </div>
+    <div class="form-actions">
+      <button type="submit" class="btn btn-primary">Add Faculty</button>
+    </div>
+  </form>
+</div>
+<div class="popup" *ngIf="successMessage">
+  <div class="popup-content">
+    <span class="close" (click)="closePopup()">&times;</span>
+    <p>Successfully submitted!</p>
+  </div>
+</div>
+

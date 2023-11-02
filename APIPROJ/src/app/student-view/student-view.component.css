@@ -1,0 +1,98 @@
+h1 {
+    text-align: center;
+    color: #007bff; /* Blue */
+    margin-bottom: 30px;
+  }
+  
+  .btn-primary {
+    background-color: #3c4c5d;
+    border-color: #3c4c5d;
+  }
+  
+  .btn-primary:hover {
+    background-color: #0056b3; /* Darker shade of blue */
+    border-color: #0056b3;
+  }
+  
+  .card {
+    transition: transform 0.3s ease;
+    margin-bottom: 20px; /* Add margin to the bottom of the cards */
+  }
+  
+  .card:hover {
+    transform: translateY(-5px); /* Add a slight lift effect on hover */
+  }
+  
+  .modal {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+  }
+  
+  .modal-dialog {
+    max-width: 800px;
+    width: 90%; /* Adjust the width as per your requirement */
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  }
+  
+  .modal-header {
+    padding: 1rem;
+    border-bottom: 1px solid #e9ecef;
+    background-color: #f8f9fa;
+    border-radius: 10px 10px 0 0;
+  }
+  
+  .modal-title {
+    margin-bottom: 0;
+    line-height: 1.5;
+    color: #007bff;
+  }
+  
+  .modal-body {
+    padding: 1rem;
+  }
+  
+  .modal-footer {
+    padding: 1rem;
+    border-top: 1px solid #e9ecef;
+    background-color: #f8f9fa;
+    border-radius: 0 0 10px 10px;
+  }
+  
+  .backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1040;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none;
+  }
+  
+  .backdrop.show {
+    display: block;
+  }
+  
+  
+  .top-right {
+    position: absolute;
+    top: 100px;
+    right: 20px;
+  }
+  
+  .btn-butttooon {
+    color: white;
+    background-color: #000;
+    border-color: #000;
+  }
+  
+  .btn-butttooon:hover {
+    background-color: #fff;
+    border-color: #fff;
+    color: #000;
+  }
+  

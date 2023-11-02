@@ -1,0 +1,51 @@
+
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet">
+<style media="screen">
+  </style>
+
+<body>
+  <div class="background">
+    <div class="shape"></div>
+    <div class="shape"></div>
+  </div>
+  <form [formGroup]="studentForm" (ngSubmit)="createStudent()">
+    <h3>Student Register</h3>
+    <p style="color:white ;text-align: center;font-size:large;">Already Registered then <a routerLink="/studentlogin">Login</a></p>
+    <label for="username">Username</label>
+    <input type="text" placeholder="Username" formControlName="username">
+    <div *ngIf="studentForm?.get('username')?.invalid && (studentForm?.get('username')?.dirty || studentForm?.get('username')?.touched)">
+      <div *ngIf="studentForm?.get('username')?.hasError('required')">Username is required</div></div>
+    <label for="useremail">User Email</label>
+    <input type="email" placeholder="Email" formControlName="useremail">
+  
+    <div *ngIf="studentForm?.get('useremail')?.invalid && (studentForm?.get('useremail')?.dirty || studentForm?.get('useremail')?.touched)">
+      <div *ngIf="studentForm?.get('useremail')?.hasError('required')">Email is required</div>
+      <div *ngIf="studentForm?.get('useremail')?.hasError('email')">Invalid email format</div>
+    </div>
+  
+    <label for="password">Password</label>
+    <input type="password" placeholder="Password" formControlName="password">
+  
+    <div *ngIf="studentForm?.get('password')?.invalid && (studentForm?.get('password')?.dirty || studentForm?.get('password')?.touched)">
+      <div *ngIf="studentForm?.get('password')?.hasError('required')">Password is required</div>
+      <div *ngIf="studentForm?.get('password')?.hasError('pattern')">Password must contain at least 8 characters, one capital letter, one number, and one special character</div>
+    </div>
+  
+    <button type="submit">Register</button>
+  
+    <div class="social">
+      <div class="go"><i class="fab fa-google"></i>  Google</div>
+      <div class="fb"><i class="fab fa-facebook"></i>  Facebook</div>
+    </div>
+  </form>
+  
+  <div class="popup" *ngIf="successMessage">
+    <div class="popup-content">
+      <span class="close" (click)="closePopup()">&times;</span>
+      <p style="color: black;">Successfully Registered!</p>
+    </div>
+  </div>
+
+</body>

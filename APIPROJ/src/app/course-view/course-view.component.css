@@ -1,0 +1,75 @@
+/* Sidebar column */
+.col-md-4 {
+    background-color: #f8f9fa; /* Light gray background */
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+  }
+  
+  /* Right area column */
+  .col-md-8 {
+    padding-left: 30px;
+    background-color: #ffffff; /* White background */
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add a shadow */
+  }
+
+  .enroll {
+    /* Add your desired button styles */
+    padding: 10px 20px;
+    background-color: #c2bbbb; /* Set the background color */
+    color: rgb(0, 0, 0); /* Set the text color */
+    border: none; /* Remove the border */
+    border-radius: 5px; /* Add rounded corners */
+    cursor: pointer; /* Add a pointer cursor on hover */
+    float: right; /* Align the button to the right */
+  }
+  .status {
+    /* Add your desired button styles */
+    padding: 10px 20px;
+    background-color: #c2bbbb; /* Set the background color */
+    color: rgb(0, 0, 0); /* Set the text color */
+    border: none; /* Remove the border */
+    border-radius: 5px; /* Add rounded corners */
+    cursor: pointer; /* Add a pointer cursor on hover */
+     /* Align the button to the right */
+  }
+  /* Apply hover and active styles to the list items */
+  .list-group-item:hover {
+    background-color: #f8f9fa;
+  }
+  
+  .list-group-item.active {
+    background-color: #f8f9fa;
+    border-color: #007bff;
+    color: #007bff;
+    font-weight: bold;
+  }
+  
+  /* Apply different colors to the course thumbnail images */
+  .course-image img {
+    border-radius: 50%;
+    border: 2px solid #007bff;
+  }
+  
+  /* Apply different color to the tutorial headings */
+  h3 {
+    color: #5f27cd; /* Deep Purple */
+  }
+  
+  /* Apply different background color to the video container */
+  .video-container {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%; /* 16:9 aspect ratio (change as needed) */
+    height: 0;
+    margin-bottom: 20px; /* Add some bottom margin to separate videos */
+  }
+  
+  .video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+  
